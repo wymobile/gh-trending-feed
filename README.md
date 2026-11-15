@@ -19,6 +19,10 @@ https://raw.githubusercontent.com/<你的用户名>/gh-trending-feed/main/trendi
 - `.github/workflows/trending-feed.yml` 里 `SINCE`：daily / weekly / monthly；`LANGUAGE`：如 `python`（留空=全部语言）
 - cron 时间：改 `schedule`
 
+## 翻译
+
+每条描述用 Google 免费接口（`translate.googleapis.com`，免 key）自动译成中文；失败或限流时保留原文（单条重试一次）。设 `TRANSLATE=false` 可关。仓库名保持原文不译。
+
 ## 注意
 
 - GitHub 官方无 trending API，这里是页面抓取（服务端渲染，可直抓）；页面改版时改 `scripts/build_feed.py` 的正则
