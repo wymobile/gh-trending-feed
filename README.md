@@ -23,6 +23,8 @@ https://raw.githubusercontent.com/<你的用户名>/gh-trending-feed/main/trendi
 
 每条描述用 Google 免费接口（`translate.googleapis.com`，免 key）自动译成中文；失败或限流时保留原文（单条重试一次）。设 `TRANSLATE=false` 可关。仓库名保持原文不译。
 
+线上验证（2026-11-15 14:21 UTC，run 43723887894）：12/12 描述为中文，XML 合法。注意 Inoreader 已缓存的条目仍是英文，下一次刷新进来的新条目才是中文。
+
 ## 注意
 
 - GitHub 官方无 trending API，这里是页面抓取（服务端渲染，可直抓）；页面改版时改 `scripts/build_feed.py` 的正则
