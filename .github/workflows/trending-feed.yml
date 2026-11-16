@@ -14,6 +14,7 @@ jobs:
     env:
       SINCE: daily          # daily | weekly | monthly
       LANGUAGE: ""          # optional, e.g. python — empty = all languages
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # raises API rate limit
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,5 +26,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add trending.xml
+          git add -A
           git diff --staged --quiet || { git commit -m "refresh trending feed $(date -u +%F)"; git push; }
